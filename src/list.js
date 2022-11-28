@@ -1,9 +1,12 @@
 const List =(props) => (
+<div>
+    <h1>List component</h1>
 <ul>
     {props.list.map((item) => (
         <Item key ={item.ObjectID} item = {item} />
     ))}
 </ul>
+</div>
 );
 
 const Item = (props) => (

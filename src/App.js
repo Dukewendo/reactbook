@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Search from "./search";
+import List from "./list";
+
+const stories = [
+  {
+    title: "React",
+    url: "www.thisReact.com",
+    author: "John Macisfloid",
+    num_comments: 35,
+    points: 4,
+    ObjectID: 0,
+  },
+  {
+    title: "Ducks",
+    url: "www.lovelyDucks.com",
+    author: "Terry Quackensfold",
+    num_comments: 13,
+    points: 1,
+    ObjectID: 1,
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>App</h1>
+
+      <Search />
+
+      <List list={stories} />
     </div>
   );
 }

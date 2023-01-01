@@ -10,7 +10,7 @@ const List =(props) => (
 );
 
 const Item = (props) => (
-    <li>
+    <li style={{listStyleType: "none"}}>
         <span>
             <a href={props.item.url} > {props.item.title}</a>
             <span>{props.item.author}</span>

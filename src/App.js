@@ -1,6 +1,7 @@
 import "./App.css";
 import Search from "./search";
 import List from "./list";
+import React from "react";
 
 const stories = [
   {
@@ -22,13 +23,23 @@ const stories = [
 ];
 
 function App() {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const searchedStories = stories.filter(function (story) {
+    return story.title.toLowerCase().includes(searchTerm.toLowerCase());
+  })
+
   return (
     <div className="App">
       <h1>App Component</h1>
 
-      <Search />
+      <Search onSearch={handleSearch} />
 
-      <List list={stories} />
+      <List list={searchedStories} />
     </div>
   );
 }
